@@ -22,9 +22,10 @@
 
         <br>
         <button id="hit">Hit</button>
-        <button id="stay" data-model-target="#modal-win">Stay</button>
+        <button id="stay">Stay</button>
         <button id="Reset" onclick="window.location.reload(true)">Reset</button>
-        <p id="results"></p>
+        <p id="results" style="color: red; font-weight: bold;"></p>
+        <button id="EndGame" class="opengif">End Game</button>
         
         <div class="img">
             <div class="img1">
@@ -39,26 +40,18 @@
         <div id="slider-value"></div>
         
     </div>
+
+    <audio id="wind" src="wind-blow.mp3" controls autoplay></audio>
+    <audio id="wave" src="ocean-wave.mp3" controls ></audio>
         
-        <!-- <div class="message active" id="modal-win" >
+        <div class="message">
             <div class="message-header">
-                <div class="title">Message:</div>
+                <div class="title">Thank you for Playing!</div>
                 <button data-close-button class="close-button">&times;</button>
             </div>
             <div class="message-body">
-                <p>you win!</p>
                 <img src="pepe-music.gif">
             </div>
-            <div class="message active" id="modal-lose" >
-            <div class="message-header">
-                <div class="title">Message:</div>
-                <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="message-body">
-                <p>you lose!</p>
-                <img src="pepe-why-pepe-the-frog.gif">
-            </div>
-        </div>
-        <div id="overlay"></div> -->
+        <div id="overlay"></div>
     </body>
 </html>

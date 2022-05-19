@@ -10,72 +10,38 @@ var deck;
 
 var canHit = true; //allows the player (you) to draw while yourSum <= 21cons
 
-
-
-
-// const openModalButtons = document.querySelectorAll('[data-modal-target]');
-// const closeModalButtons = document.querySelectorAll('[data-modal-close]');
-// const overlay = document.getElementById('overlay');
-
-
-// openModalButtons.forEach(button => {
-//     button.addEventListener('click', () =>{
-//         const modal = document.querySelector(button.dataset.modalTarget);
-//         openModal(modal);
-//     })
-// })
-
-// closeModalButtons.forEach(button => {
-//     button.addEventListener('click', () =>{
-//         const modal = closest('.message');
-//         closeModal(modal);
-//     })
-// })
-
-// function openModal(modal){
-//     if(modal = null) 
-//     return;
-//     modal.classList.add('active');
-//     overlay.classList.add('active');
-// }
-
-// function closeModal(modal){
-//     if(modal = null) 
-//     return;
-//     modal.classList.remove('active');
-//     overlay.classList.remove('active');
-// }
 window.onload = function() {
     buildDeck();
     shuffleDeck();
     startGame();
+    var modals =document.getElementsByClassName('message');
+    var btn = document.getElementsByClassName('opengif');
+    var close = document.getElementsByClassName('close-button');
+    for(let i=0;i<btn.length;i++){
+        btn[i].onclick = function() {
+            modals[i].style.display = "block";
+        }
+    }
+    for(let i=0;i<close.length;i++){
+        close[i].onclick = function() {
+            modals[i].style.display = "none";
+        }
+    }
     let slider = document.getElementById("slider");
     let sliderValue = document.getElementById("slider-value");
-
+    let wind = document.getElementById("wind");
+    let wave = document.getElementById("wave");
+    wind.setAttribute("autoplay", "");
     function updateSlider(){
         let value = slider.value;
         const root = document.documentElement;
-    //     var grass_audio = new audio({
-    //         loop:true,
-    //         volume:1,
-    //         src:['wind-blow.mp3']
-    //     })
-    //     var ocean_audio = new audio({
-    //         loop:true,
-    //         volume:0,
-    //         src:['ocean-wave.mp3']
-    //     }) 
-      
-    //     if(value <50){
-    //         grass_audio.play();
-    //         grass_audio.volume = (100 -value)/100;}
-    //     else{
-    //     ocean_audio.play();
-    //     ocean_audio.volume value/100;
-    // }
     sliderValue.innerHTML = `<p>${value}</p>`;
     root.style.setProperty('--opacity1', (100 -value)/100);
     root.style.setProperty('--opacity2', value/100 );
+    if(value == 100){
+        wave.setAttribute('autoplay', '');
+    }
+
 }
     slider.addEventListener("input", updateSlider);
 
@@ -183,6 +149,7 @@ function stay() {
 
     document.getElementById("dealer-sum").innerText = dealerSum;
     document.getElementById("your-sum").innerText = yourSum;
+    document.getElementById("results").innerText = message;
     document.getElementById("results").innerText = message;
    
 }
