@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Black Jack</title>
+        <link rel="stylesheet" href="blackjack.css">
+        <script src="blackjack.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+           
+
+        <h2>Dealer: <span id="dealer-sum"></span></h2>
+        <div id="dealer-cards">
+            <img id="hidden" src="./cards/BACK.png">
+        </div>
+
+        <h2>You: <span id="your-sum"></span></h2>
+        <div id="your-cards"></div>
+
+        <br>
+        <button id="hit">Hit</button>
+        <button id="stay" data-model-target="#modal-win">Stay</button>
+        <button id="Reset" onclick="window.location.reload(true)">Reset</button>
+        <p id="results"></p>
+        
+        <div class="img">
+            <div class="img1">
+                <img src="grass.jpg" alt ="grassland"/>
+            </div>
+            <div class="img2">
+                <img src="ocean.jpg" alt ="ocean"/>
+            </div>
+        </div>
+    
+        <input type="range" id="slider" min ="0" max = "100" value="0">
+        <div id="slider-value"></div>
+        
+    </div>
+        
+        <!-- <div class="message active" id="modal-win" >
+            <div class="message-header">
+                <div class="title">Message:</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="message-body">
+                <p>you win!</p>
+                <img src="pepe-music.gif">
+            </div>
+            <div class="message active" id="modal-lose" >
+            <div class="message-header">
+                <div class="title">Message:</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="message-body">
+                <p>you lose!</p>
+                <img src="pepe-why-pepe-the-frog.gif">
+            </div>
+        </div>
+        <div id="overlay"></div> -->
+    </body>
+</html>
