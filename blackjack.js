@@ -31,7 +31,6 @@ window.onload = function() {
     let sliderValue = document.getElementById("slider-value");
     let wind = document.getElementById("wind");
     let wave = document.getElementById("wave");
-    wind.setAttribute("autoplay", "");
     function updateSlider(){
         let value = slider.value;
         const root = document.documentElement;
